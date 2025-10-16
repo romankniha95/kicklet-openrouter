@@ -14,7 +14,7 @@ def ask():
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
         "Content-Type": "application/json",
-        "HTTP-Referer": "https://yourdomain.com",  # môžeš nechať ako je
+        "HTTP-Referer": "https://yourdomain.com",
         "X-Title": "KickBotAI"
     }
 
@@ -36,3 +36,9 @@ def ask():
         return jsonify({"response": content})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+# ⬇️ Pridaj TOTO:
+if __name__ == "__main__":
+    import os
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
