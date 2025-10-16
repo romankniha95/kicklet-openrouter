@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: kicklet-openrouter
+    env: python
+    buildCommand: ""
+    startCommand: python main.py
+    envVars:
+      - key: OPENROUTER_API_KEY
+        value: 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
